@@ -70,13 +70,13 @@ namespace ConsoleApp1
   {
     static void Main(string[] args)
     {
-    Liceum liceum = new Liceum();
-    liceum.Learn();
-    Bacalavriat bacalavriat = new Bacalavriat();
-    bacalavriat.Learn();
-    Magistratura magistratura = new Magistratura();
-    magistratura.Learn();
-    Console.Read();
+      Liceum liceum = new Liceum();
+      liceum.Learn();
+      Bacalavriat bacalavriat = new Bacalavriat();
+      bacalavriat.Learn();
+      Magistratura magistratura = new Magistratura();
+      magistratura.Learn();
+      Console.Read();
     }
   }
 }
