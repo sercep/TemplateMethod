@@ -72,10 +72,10 @@ namespace ConsoleApp1
     {
     Liceum liceum = new Liceum();
     liceum.Learn();
-    Bacalavriat bacl = new Bacalavriat();
-    bacl.Learn();
-    Magistratura magistr = new Magistratura();
-    magistr.Learn();
+    Bacalavriat bacalavriat = new Bacalavriat();
+    bacalavriat.Learn();
+    Magistratura magistratura = new Magistratura();
+    magistratura.Learn();
     Console.Read();
     }
   }
