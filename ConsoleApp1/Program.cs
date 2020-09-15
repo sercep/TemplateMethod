@@ -2,52 +2,63 @@
 
 namespace ConsoleApp1
 {
-  abstract class University
+  abstract class Education
   {
     public void Learn()
     {
       Enter();
       Study();
-      WritingThesis();
+      PassExams();
       GetDocument();
     }
     public abstract void Enter();
-    public abstract void Study();
-    public virtual void WritingThesis()
+    public virtual void Study()
     {
-      Console.WriteLine("Написание дипломной работы");
+      Console.WriteLine("Обучение в  " + GetType().Name);
     }
+    public abstract void PassExams();
     public abstract void GetDocument();
   }
-
-  class Bacl : University
+  class Liceum : Education
+  {
+    public override void Enter()
+    {
+      Console.WriteLine("Поступление в лицей");
+    }
+    public override void PassExams()
+    {
+      Console.WriteLine("Сдача ЕГЭ");
+    }
+    public override void GetDocument()
+    {
+      Console.WriteLine("Получение аттестата");
+    }
+  }
+  class Bacalavriat : Education
   {
     public override void Enter()
     {
       Console.WriteLine("Сдача ЕГЭ и поступление на бакалавриат");
     }
-
-    public override void Study()
+    public override void PassExams()
     {
-      Console.WriteLine("Обучение на бакалавриате");
+      Console.WriteLine("Написание и защита ВКР");
     }
-
     public override void GetDocument()
     {
       Console.WriteLine("Получение диплома бакалавра");
     }
   }
 
-  class Magistr : University
+  class Magistratura : Education
   {
     public override void Enter()
     {
       Console.WriteLine("Сдача вступительных экзаменов и поступление на магистратуру");
     }
-
-    public override void Study()
+    public override void PassExams()
     {
-      Console.WriteLine("Обучение на магистратуре");
+      Console.WriteLine("Написание и защита магистрской диссертации");
     }
 
     public override void GetDocument()
@@ -59,11 +70,13 @@ namespace ConsoleApp1
   {
     static void Main(string[] args)
     {
-      Bacl bacl = new Bacl();
-      bacl.Learn();
-      Magistr magistr = new Magistr();
-      magistr.Learn();
-      Console.Read();
+    Liceum liceum = new Liceum();
+    liceum.Learn();
+    Bacalavriat bacl = new Bacalavriat();
+    bacl.Learn();
+    Magistratura magistr = new Magistratura();
+    magistr.Learn();
+    Console.Read();
     }
   }
 }
